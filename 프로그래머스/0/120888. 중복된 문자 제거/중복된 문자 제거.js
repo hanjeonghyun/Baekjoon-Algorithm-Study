@@ -1,9 +1,4 @@
 function solution(my_string) {
-    var answer = '';
-    for (let i=0;i<my_string.length;i++) {
-        if (!answer.includes(my_string[i])) {
-            answer += my_string[i];
-        }
-    }
+    var answer = [...new Set(my_string)].join('');
     return answer;
 }
