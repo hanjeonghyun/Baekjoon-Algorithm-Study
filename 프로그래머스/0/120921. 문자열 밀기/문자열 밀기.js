@@ -1,17 +1,5 @@
 function solution(A, B) {
-    var answer = 0;
-    let lst = A.split("")
-    let blst = B.split("")
-    while (true) {
-        if (lst.join('') === blst.join('')) {
-            return answer;
-        }
-        else if (answer >= lst.length) {
-            return -1;
-        }
-        let a = lst.pop();
-        lst.unshift(a);
-        answer++;
-    }
-    return answer;
+    return (B+B).indexOf(A);
 }
+
+// 앞으로 문제를 이리 저리 뜯어보며 규칙성을 찾아보도록 노력할 것 ... 생각의 전환 중요!!!!
