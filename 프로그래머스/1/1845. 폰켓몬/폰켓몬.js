@@ -1,10 +1,13 @@
 function solution(nums) {
-    var answer = [...new Set(nums)];
-    let num = nums.length / 2;
-    if (num > answer.length) {
-        return answer.length;
-    } else {
-        return num;
-    }
+    let answer = 0;
+    let myBag = new Map();
+    nums.forEach((monster) => {
+        if (myBag.get(monster)) myBag.set(monster, myBag.get(monster) + 1);
+        else myBag.set(monster, 1);
+    });
+    
+    if (myBag.size < nums.length / 2) answer = myBag.size;
+    else answer = nums.length / 2;
+    
     return answer;
 }
